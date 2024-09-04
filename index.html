@@ -10,6 +10,11 @@
     <!-- prettier-ignore -->
     <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
     <style>
+      :root {
+        --text-primary: black;
+        --text-invert: white;
+      }
+
       .montserrat {
         font-family: "Montserrat", sans-serif;
         font-optical-sizing: auto;
@@ -31,10 +36,6 @@
 
       .slide {
         padding-top: 51px;
-        background-image: url("pictures/fc24-cover.png");
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position: center;
       }
 
       .slide.clear {
@@ -42,16 +43,37 @@
       }
 
       .slide::after {
+        width: 42px;
         top: 4px;
         right: 15px;
         left: auto;
-        background: none;
+        background: url("pictures/pagination.svg");
+        background-position: center;
+        background-repeat: no-repeat;
         color: #000;
       }
 
+      .slide.black li {
+        color: var(--text-invert);
+      }
+      .slide.black li::before {
+        color: var(--text-invert);
+      }
+
+      .slide {
+        color: var(--text-primary);
+      }
+      .slide.black {
+        color: var(--text-invert);
+      }
+
       .slide h2 {
-        color: #000;
+        color: var(--text-primary);
         font-size: 60px;
+      }
+      
+      .slide.black h2 {
+        color: var(--text-invert);
       }
 
       .cover {
